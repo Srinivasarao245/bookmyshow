@@ -9,9 +9,24 @@ export const EventsAPi = createApi({
     getEvents: builder.query ({
       query: () =>`/events`,
     }),
+    AddEvents: builder.mutation({
+        query:(events)=>({
+            url:`/addevents`,
+            method: 'Post',
+            body:events,
+        }),
+    }),
+    getEventDetails: builder.query({
+      query:(id)=>({
+        url:`/events/${id}`,
+        method:'get',
+      }),
+    }),
   }),
 })
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { useGetEventsQuery,
-               useLazyGetEventsQuery,  } = EventsAPi
+               useLazyGetEventsQuery,
+               useAddEventsMutation,
+               useGetEventDetailsQuery,  } = EventsAPi

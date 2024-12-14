@@ -10,8 +10,8 @@ export const BookmyshowApi = createApi({
       query: () => `/movies`,
       }),
       getmoviesdetails:builder.query({
-        query:()=>({
-          url:'/movie/${id',
+        query:(id)=>({
+          url:`/movies/${id}`,
             method:'get',
             }),
           }),

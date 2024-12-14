@@ -13,6 +13,9 @@ import Movies from './Features/bokmyshow/Movies';
 import Navbar2 from './Navbar2';
 import AddMovie from './Features/bokmyshow/AddMovie';
 import Events from './Features/Eventshows/Events';
+import AddEvents from './Features/Eventshows/AddEvents';
+import MovieDetails from './Features/bokmyshow/MovieDetails';
+import EventDetails from './Features/Eventshows/EventDetails';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +35,20 @@ const router = createBrowserRouter([
         element:<AddMovie></AddMovie>
       },
       {
+        path:'/moviedetails/:id',
+        element:<MovieDetails></MovieDetails>
+      },
+      {
         path:'/events',
         element:<Events></Events>
+      },
+      {
+        path:'/addevents',
+        element:<AddEvents></AddEvents>
+      },
+      {
+        path:'/eventsdetails/:id',
+        element:<EventDetails></EventDetails>
       }
     ]
   },

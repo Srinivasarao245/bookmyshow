@@ -18,6 +18,7 @@ function Movies() {
                 <h5 class="card-title">{mov.movieTitle}</h5>
                 <p class="card-text">{mov.movieCensor}</p>
                 <p class="card-text">{mov.releaseDate}</p>
+                <h6> {mov.aboutUs.slice(0,30)} <a href={`/moviedetails/${mov._id}`}>more</a> </h6>
               </div>
             </div>
           </div>
