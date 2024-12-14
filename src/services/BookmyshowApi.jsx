@@ -8,11 +8,34 @@ export const BookmyshowApi = createApi({
   endpoints: (builder) => ({
     getBookmyshowApi: builder.query({
       query: () => `/movies`,
-    }),
-  }),
+      }),
+      getmoviesdetails:builder.query({
+        query:()=>({
+          url:'/movie/${id',
+            method:'get',
+            }),
+          }),
+      addMovies:builder.mutation({
+        query:(movies) =>({
+          url:`/addmovies`,
+          method:'Post',
+          body:movies,
+        }),
+      }),
+      getFiltermovies:builder.mutation({
+        query:(data)=>({
+          url:`/mfilter`,
+          method:'post',
+          body:data,
+        })
+      })    
+      }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { useGetBookmyshowApiQuery,
-                } = BookmyshowApi;
+               useLazyGetBookmyshowApiQuery,
+               useGetmoviesdetailsQuery,
+               useAddMoviesMutation,
+               useGetFiltermoviesMutation, } = BookmyshowApi;

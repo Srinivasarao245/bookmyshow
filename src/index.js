@@ -11,6 +11,8 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import Movies from './Features/bokmyshow/Movies';
 import Navbar2 from './Navbar2';
+import AddMovie from './Features/bokmyshow/AddMovie';
+import Events from './Features/Eventshows/Events';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path:'/Movies',
         element:<Movies></Movies>
+      },
+      {
+        path:'/addmovies',
+        element:<AddMovie></AddMovie>
+      },
+      {
+        path:'/events',
+        element:<Events></Events>
       }
     ]
   },

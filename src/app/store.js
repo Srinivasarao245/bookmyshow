@@ -2,16 +2,18 @@ import { configureStore } from '@reduxjs/toolkit'
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { BookmyshowApi } from '../services/BookmyshowApi'
+import { EventsAPi } from '../services/EventsApi'
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
     [BookmyshowApi.reducerPath]: BookmyshowApi.reducer,
+    [EventsAPi.reducerPath]: EventsAPi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(BookmyshowApi.middleware),
+    getDefaultMiddleware().concat(BookmyshowApi.middleware,EventsAPi.middleware),
 })
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

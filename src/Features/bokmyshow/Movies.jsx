@@ -1,7 +1,9 @@
-import React from 'react';
-import { useGetBookmyshowApiQuery } from '../../services/BookmyshowApi';
+import React, { useEffect } from 'react';
+import { useGetBookmyshowApiQuery, useLazyGetBookmyshowApiQuery } from '../../services/BookmyshowApi';
 function Movies() {
     var { isLoading,data } =useGetBookmyshowApiQuery();
+    var [MovieFn]=useLazyGetBookmyshowApiQuery();
+    useEffect(()=>{MovieFn()},[MovieFn]);
     console.log(isLoading)
     console.log(data);
   return (
